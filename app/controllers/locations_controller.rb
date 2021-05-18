@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[show edit new create destroy]
+  before_action :set_location, only: %i[show edit destroy]
 
   def index
     @location = policy_scope(Location)
@@ -46,7 +46,7 @@ class LocationsController < ApplicationController
     authorize(@location)
   end
 
-  def list_params
+  def location_params
     params.require(:location).permit(:name, :location)
   end
 end
