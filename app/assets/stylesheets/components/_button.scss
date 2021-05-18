@@ -19,12 +19,12 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: $light-gray;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: #e1e9e6;
   color: white;
 }
 
@@ -33,7 +33,7 @@
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
+  background: linear-gradient(rgb(185, 26, 26), rgb(107, 9, 9));
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
 }
@@ -41,4 +41,9 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.session-login-btn{
+  color: rgb(185, 26, 26);
+  margin-bottom: 16px;
 }
