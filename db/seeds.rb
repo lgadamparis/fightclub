@@ -13,4 +13,3 @@ user7 = User.create!(first_name: "Kanye", last_name: "West", pseudo: "CrazyKanye
 user8 = User.create!(first_name: "Courgette", last_name: "Courgette", pseudo: "Courgette", skills: "courgette", bio: "I'm a courgette ", email: "pakaste@icloud.com", password: "123456")
 
 puts "seeds_finished"
-
