@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   SKILL_LIST = ["boxe", "muay thai", "mma", "la bagarre", "ju-jitsu", "karaté", "fart", "no skills, I'm a damn shit"]
   has_many :fights
   has_many :locations
