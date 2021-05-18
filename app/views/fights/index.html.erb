@@ -49,3 +49,34 @@
     Dinner
   </div>
 </div>
+=======
+<h1>Welcome to the fight club</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pseudo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @location.each do |location| %>
+      <tr>
+        <td><%= location.name %></td>
+        <td><%= location.user_id %></td>
+        <td><%= link_to "Show", location %></td>
+        <% if policy(location).edit? %>
+          <td><%= link_to "Edit", edit_location_path(location) %></td>
+        <% end %>
+        <% if policy(location).destroy? %>
+          <td><%= link_to "Destroy", location, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to "New Fight", new_location_path %>
+
+
