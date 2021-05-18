@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :pseudo, presence: true, uniqueness: true
   validates :skills, presence: true
+  validates :bio, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
