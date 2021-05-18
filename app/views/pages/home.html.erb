@@ -4,7 +4,13 @@
     <div class="banner-content">
       <h1><strong>FIGHT CLUB</strong>!</h1>
       <p>Challenge your fighting spirit</p>
-      <a class="btn btn-ghost" href="#">Become a fighter</a>
+      <a class="btn btn-ghost" href="/users/sign_up">Become a fighter</a>
     </div>
   </div>
+  <% if user_signed_in? %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "login-btn btn-ghost" %>
+  <% else %>
+    <%= link_to 'login', '/users/sign_in', class: 'login-btn btn-ghost' %>
+  <% end %>
 </div>
+

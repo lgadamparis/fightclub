@@ -1,11 +1,15 @@
 class User < ApplicationRecord
-  #enum skills: ["boxe", "muay thai", "mma", "la bagarre", "ju-jitsu", "karaté", "fart", "no skills, I'm a damn shit"]
+
+
+  enum skills: ["boxing", "muay thai", "courgette", "mma", "la bagarre", "ju-jitsu", "karate", "fart", "no skills, i'm a damn shit"]
   has_many :fights
   has_many :locations
-  #validates :first_name, presence: true
-  #validates :last_name, presence: true
-  #validates :pseudo, presence: true, uniqueness: true
-  #validates :skills, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :pseudo, presence: true, uniqueness: true
+  validates :skills, presence: true
+  validates :bio, presence: true
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
