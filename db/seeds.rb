@@ -1,3 +1,4 @@
+
 puts "destroy_all_records"
 User.destroy_all
 
