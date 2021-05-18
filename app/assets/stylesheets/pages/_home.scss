@@ -37,6 +37,15 @@
   position: absolute;
   top: 24px;
   right: 32px;
-
+  text-decoration: none;
 }
 
+.sign-up-form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 36vw;
+  margin-left: 36vw;
+  color: #F4F4F4;
+  padding-top: 36px;
+}
