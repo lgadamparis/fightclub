@@ -6,10 +6,10 @@
         <%= simple_form_for @location do |f| %>
           <%= f.input :name, placeholder: "location name" %>
           <%= f.input :location, placeholder: "location" %>
-        <% end %>
-           <%= simple_form_for :search, method: "get" do |f| %>
-          <%= f.input :starts_at, as: :string, required: false, input_html: { class: "datepicker", id: "range_start"}, placeholder: "dd-mm-year" %>
-          <%= f.button :submit, "Let's fight", class: "btn btn-danger" %>
+          <%= f.input :starts_at, as: :string, input_html: {  id: "range_start" }%>
+          <%= f.input :ends_at, as: :string, input_html: { id: "range_end"} %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true }, placeholder: "download photos" %>
+          <%= f.submit "Let's fight", class: "btn btn-danger" %>
         <% end %>
       </div>
     </div>
