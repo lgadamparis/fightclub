@@ -2,7 +2,16 @@ class LocationsController < ApplicationController
   before_action :set_location, only: %i[show edit destroy]
 
   def index
-    @location = policy_scope(Location)
+    @locations = policy_scope(Location)
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { location: location }),
+        id: location.id,
+        image_url: helpers.asset_url('boxingglove.jpeg')
+      }
+    end
   end
 
   def show

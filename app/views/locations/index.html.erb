@@ -1,19 +1,35 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292532/yael-gonzalez-vdbOJuueLpU-unsplash_uxv8a4.jpg')">
- <div class="container">
-  <h1>Find your <strong>fight location</strong>, you crazy fuck</h1>
-  <br>
-  <%= simple_form_for :search, url: root_path, method: :get, html: { class: "simple-form-locations" } do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <br>
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
+<div class="banner main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292532/yael-gonzalez-vdbOJuueLpU-unsplash_uxv8a4.jpg')">
+
+  <div class="first-things">
+    <h1>Find your <strong>fight location</strong>, you crazy fuck</h1>
+    <%= link_to "Create your own location", "/locations/new", class: "btn btn-ghost" %>
   </div>
-  <% end %>
 
-  <h3>Map will be inserted here</h3>
-  <%= link_to "Create your own location", "/locations/new", class: "btn btn-ghost" %>
+  <div class="row">
+
+    <div id="map"
+        class="col-lg-6"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+    <div class="cards-trips">
+      <% @locations.each do |location| %>
+        <div class="card-trip col-lg-6">
+          <img src="https://areabox.fr/documents-images/IMG_6341.jpg"/>
+          <div class="card-trip-infos">
+            <div>
+            <h2><%= location.name %></h2>
+              <p><%= location.location %></p>
+            </div>
+            <div class="avatar-bordered">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvcvtWZgxg2UOlbbr5NrHSjJsfsJtE319uLOc2aemIP_VdIWXbienu9uW5FN5ggOS96tc&usqp=CAU" class="avatar-bordered" />
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
 
