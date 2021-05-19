@@ -36,6 +36,10 @@
     input_html: { autocomplete: "your bio in a few words" } %>
 
 
+    <%=f.input :photo, as: :file,
+    required: true
+    %>
+
   </div>
 
   <div class="form-actions ">
