@@ -34,6 +34,7 @@
 
         <%= f.input :skills,
         required: true,
+        collection: User::SKILLS,
         input_html: { autocomplete: "your main skill" } %>
 
         <%= f.input :bio,
