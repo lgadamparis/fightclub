@@ -8,8 +8,8 @@ class LocationsController < ApplicationController
         lat: location.latitude,
         lng: location.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { location: location }),
-        id: location.id,
-        image_url: helpers.image_path('boxingglove.jpeg')
+        id: location.id
+        # image_url: helpers.image_path('boxingglove.jpeg')
       }
     end
   end

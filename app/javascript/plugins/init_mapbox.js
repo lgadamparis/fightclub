@@ -28,7 +28,7 @@ const initMapbox = () => {
       element.style.backgroundSize = 'contain';
       element.style.width = '25px';
       element.style.height = '25px';
-      new mapboxgl.Marker(element)
+      new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);
