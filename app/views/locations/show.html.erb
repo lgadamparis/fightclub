@@ -1,0 +1,19 @@
+<div class="banner-container">
+    <div class="col-12 col-sm-6">
+      <h3>Your fight informations</h3>
+      <hr>
+      <div class="container">
+      <div class="row">
+        <h6><%= @location.name %></h6>
+      </div>
+        <h6><%= @location.location %></h6>
+        <h6><%= @location.starts_at %></h6>
+        <%= @location.photos.count %>
+        <% if @location.photos.attached?%>
+        <h6><%=cl_image_tag @location.photos.first.key %></h6>
+        <%end %>
+
+
+      </div>
+    </div>
+  </div>
