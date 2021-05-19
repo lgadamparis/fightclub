@@ -10,10 +10,16 @@
         <h6><%= @location.starts_at %></h6>
         <%= @location.photos.count %>
         <% if @location.photos.attached?%>
-        <h6><%=cl_image_tag @location.photos.first.key %></h6>
+        <h6><%=cl_image_tag @location.photos.first.key, class: "image-show" %></h6>
         <%end %>
 
 
       </div>
     </div>
   </div>
+
+<style>
+.image-show {
+  width: 350px;
+}
+</style>
