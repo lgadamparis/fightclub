@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-
-
+  has_one_attached :photo
   enum skills: ["boxing", "muay thai", "courgette", "mma", "la bagarre", "ju-jitsu", "karate", "fart", "no skills, i'm a damn shit"]
   has_many :fights
   has_many :locations
