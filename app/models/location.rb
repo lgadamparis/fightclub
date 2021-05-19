@@ -8,4 +8,4 @@ class Location < ApplicationRecord
   validates :ends_at, presence: true
 
 end
-c
+
