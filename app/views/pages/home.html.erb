@@ -4,7 +4,11 @@
     <div class="banner-content">
       <h1><strong>FIGHT CLUB</strong></h1>
       <p>Challenge your fighting spirit</p>
-      <a class="btn btn-ghost" href="/users/sign_up">Become a fighter</a>
+      <% if user_signed_in? %>
+          <%= link_to 'Become a fighter', locations_path, class: 'btn btn-ghost' %>
+        <% else %>
+          <%= link_to 'Become a fighter', new_user_registration_path, class: 'btn btn-ghost' %>
+        <% end %>
     </div>
   </div>
   <% if user_signed_in? %>
@@ -13,4 +17,3 @@
     <%= link_to 'login', locations_path, class: 'login-btn btn-ghost' %>
   <% end %>
 </div>
-
