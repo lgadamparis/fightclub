@@ -1,6 +1,7 @@
 class User < ApplicationRecord
+  SKILLS = ["boxing", "muay thai", "courgette", "mma", "la bagarre", "ju-jitsu", "karate", "fart", "no skills, i'm a damn shit"]
+  enum skills: SKILLS
   has_one_attached :photo
-  enum skills: ["boxing", "muay thai", "courgette", "mma", "la bagarre", "ju-jitsu", "karate", "fart", "no skills, i'm a damn shit"]
   has_many :fights
   has_many :locations
   validates :first_name, presence: true
