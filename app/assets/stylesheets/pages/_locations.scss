@@ -46,6 +46,11 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.card-trip:hover {
+  box-shadow: 0 0 20px 20px rgba(0, 140, 186, 0.5);
 }
 
 .card-trip > img {
@@ -98,4 +103,17 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+}
+
+.btn-to-fight {
+  margin-left: 42px;
+  margin-bottom: 24px;
+  color: #F4F4F4;
+  border: 100px solid #F4F4F4;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 3s ease;
+  text-decoration: none;
 }

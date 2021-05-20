@@ -3,12 +3,17 @@ class LocationsController < ApplicationController
 
   def index
     @locations = policy_scope(Location)
+
+    if params[:query].present?
+      @locations = Location.where("location ILIKE ?", "%#{params[:query]}%")
+    end
+
     @markers = @locations.geocoded.map do |location|
       {
         lat: location.latitude,
-        lng: location.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { location: location }),
-        id: location.id
+        lng: location.longitude
+        # infoWindow: render_to_string(partial: "info_window", locals: { location: location }),
+        # id: location.id
         # image_url: helpers.image_path('boxingglove.jpeg')
       }
     end

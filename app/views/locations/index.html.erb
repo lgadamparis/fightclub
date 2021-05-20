@@ -1,8 +1,23 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
 <div class="banner-main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292532/yael-gonzalez-vdbOJuueLpU-unsplash_uxv8a4.jpg')">
 
   <div class="first-things">
     <h1>Find your <strong>fight location</strong>, you crazy fuck</h1>
     <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight" %>
+       <div class="search-form-control form-group">
+
+      <%= form_tag locations_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a location"
+        %>
+        <%= submit_tag "Search", class: "submit-search" %>
+      <% end %>
+    </div>
+
   </div>
 
   <div class="row mt 24">
@@ -30,6 +45,8 @@
         </div>
       <% end %>
     </div>
+
+
   </div>
 </div>
 
