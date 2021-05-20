@@ -1,5 +1,5 @@
 .form-group{
-  width: 50%;
+  width: 100%;
 }
 .simple-form-locations{
   .search-form-control{
@@ -11,7 +11,6 @@
   }
 }
 
-
 .main-container{
   display: flex;
   flex-direction: row;
@@ -19,6 +18,7 @@
 }
 
 .row {
+  margin-top: 24px;
   width: 100%;
   justify-content: space-evenly;
   margin-right: unset;
@@ -41,6 +41,8 @@
 }
 
 .card-trip {
+  margin-bottom: 12px;
+  padding: 8px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -78,4 +80,22 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.banner-main-container{
+  background-size: cover;
+  background-position: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 100%;
+}
+
+.banner-main-container h1 {
+  padding: 24px 42px;
+  margin: 0;
+  color: lightgrey;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
 }
