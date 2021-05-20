@@ -5,17 +5,22 @@
 
   <div class="first-things">
     <h1>Find your <strong>fight location</strong>, you crazy fuck</h1>
-    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight mb-4" %>
+    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight mb-15" %>
        <div class="search-form-control form-group">
 
-      <%= form_tag locations_path, method: :get do %>
-        <%= text_field_tag :query,
+      <%#= form_tag locations_path, method: :get do %>
+        <%#= text_field_tag :query,
           params[:query],
           class: "form-control mb-4 mt-4",
           placeholder: "Find a location"
         %>
-        <%= submit_tag "Search", class: "submit-search mb-4" %>
-      <% end %>
+        <%#= submit_tag "Search", class: "submit-search mb-4" %>
+      <%# end %>
+      <form action="/locations">
+        <input type="search" name="query">
+        <i class="fa fa-search mb-4"></i>
+        <%= submit_tag 'submit', class: 'd-none', id: 'submit-search' %>
+      </form>
     </div>
 
   </div>
@@ -31,8 +36,9 @@
 
     <div class="cards-trips">
       <% @locations.each do |location| %>
-        <div class="card-trip col-lg-6">
-           <%=cl_image_tag location.photos.first.key, class: "image-show" %>
+        <%= link_to location_path(location) do %>
+              <div class="card-trip col-lg-6">
+          <%=cl_image_tag location.photos.first.key, class: "image-show" %>
           <div class="card-trip-infos">
             <div>
             <h2><%= location.name %></h2>
@@ -45,6 +51,7 @@
             </div>
           </div>
         </div>
+        <% end %>
       <% end %>
     </div>
 
