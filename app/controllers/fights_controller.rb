@@ -10,7 +10,7 @@ class FightsController < ApplicationController
     @location = Location.find(params[:location_id])
     @fight.location = @location
     if @fight.save
-      redirect_to location_path(@location)
+      redirect_to location_path
     else
       render :new
     end
