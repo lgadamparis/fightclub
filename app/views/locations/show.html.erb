@@ -1,25 +1,43 @@
-<div class="banner main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292532/yael-gonzalez-vdbOJuueLpU-unsplash_uxv8a4.jpg')">
-    <div class="col-12 col-sm-6">
-      <h2>Your fight informations</h2>
-      <hr>
-      <div class="container">
-      <div class="row">
-        <h6><%= @location.name %></h6>
-      </div>
-        <h6><%= @location.location %></h6>
-        <h6><%= @location.starts_at %></h6>
-        <%= @location.photos.count %>
-        <% if @location.photos.attached?%>
-        <h6><%=cl_image_tag @location.photos.first.key, class: "image-show" %></h6>
-        <%end %>
+<h2>Your fight informations</h2>
+<div class="card-trip">
+  <%=cl_image_tag @location.photos.first.key, class: "image-show" %>
+  <div class="card-trip-infos">
+    <div>
+      <h2>Nom</h2>
+      <h2><h6><%= @location.name %></h6></h2>
+      <h2>Lieu</h2>
+      <p><h6><%= @location.location %></h6></p>
 
+      <p><h6><%= @location.starts_at %></h6></p>
+      <h2>Your fighter informations</h2>
+      <h2>pseudo</h2>
+      <p><h6><%= current_user.pseudo %></h6></p>
+      <h2>pseudo</h2>
+      <p><h6><%= current_user.bio %></h6></p>
+      <h2>Quand je peux casser des bouches ?</h2>
+      <%= simple_form_for [@location, @fight] do |f| %>
+        <%= f.input :fight_date, input_html: {  id: "range_start" }%>
+        <%= f.submit "Let's fight", class: "btn btn-danger", data: { confirm: "Are you sure you want to fight lil dickhead ?"} %>
+      <% end %>
+      <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
 
-      </div>
     </div>
-  </div>
 
-<style>
-.image-show {
-  width: 350px;
-}
-</style>
+    <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

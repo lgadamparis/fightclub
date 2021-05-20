@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_113809) do
+ActiveRecord::Schema.define(version: 2021_05_20_122737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,13 @@ ActiveRecord::Schema.define(version: 2021_05_19_113809) do
   create_table "fights", force: :cascade do |t|
     t.boolean "booked"
     t.integer "result"
-    t.string "date"
-    t.string "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "fight_date"
+    t.bigint "location_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["location_id"], name: "index_fights_on_location_id"
+    t.index ["user_id"], name: "index_fights_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -51,12 +54,10 @@ ActiveRecord::Schema.define(version: 2021_05_19_113809) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.string "StartsAt"
-    t.string "EndsAt"
-    t.string "starts_at"
-    t.string "ends_at"
     t.float "latitude"
     t.float "longitude"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
@@ -79,5 +80,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_113809) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "fights", "locations"
+  add_foreign_key "fights", "users"
   add_foreign_key "locations", "users"
 end
