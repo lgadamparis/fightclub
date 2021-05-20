@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  SKILLS = ["boxing", "muay thai", "courgette", "mma", "la bagarre", "ju-jitsu", "karate", "fart", "no skills, i'm a damn shit"]
+  SKILLS = ["boxing", "muay thai", "courgette", "mma", "la bagarre", "ju-jitsu", "karate", "fart",
+            "no skills, i'm a damn shit"]
   enum skills: SKILLS
   has_one_attached :photo
   has_many :fights
@@ -9,7 +10,6 @@ class User < ApplicationRecord
   validates :pseudo, presence: true, uniqueness: true
   validates :skills, presence: true
   validates :bio, presence: true
-
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

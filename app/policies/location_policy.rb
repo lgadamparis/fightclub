@@ -1,11 +1,12 @@
 class LocationPolicy < ApplicationPolicy
   class Scope < Scope
-   def resolve
+    def resolve
       scope.where(user: user)
-   end
+    end
   end
 
-  def show? # returns a boolean
+  # returns a boolean
+  def show?
     true
   end
 
