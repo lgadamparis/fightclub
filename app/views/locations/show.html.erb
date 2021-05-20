@@ -20,6 +20,7 @@
         <%= f.submit "Let's fight", class: "btn btn-danger", data: { confirm: "Are you sure you want to fight lil dickhead ?"} %>
       <% end %>
       <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
+
     </div>
 
     <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
