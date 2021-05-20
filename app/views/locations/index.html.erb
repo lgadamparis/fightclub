@@ -5,16 +5,16 @@
 
   <div class="first-things">
     <h1>Find your <strong>fight location</strong>, you crazy fuck</h1>
-    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight" %>
+    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight mb-4" %>
        <div class="search-form-control form-group">
 
       <%= form_tag locations_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "form-control mb-4 mt-4",
           placeholder: "Find a location"
         %>
-        <%= submit_tag "Search", class: "submit-search" %>
+        <%= submit_tag "Search", class: "submit-search mb-4" %>
       <% end %>
     </div>
 
@@ -32,14 +32,14 @@
     <div class="cards-trips">
       <% @locations.each do |location| %>
         <div class="card-trip col-lg-6">
-          <img src="https://areabox.fr/documents-images/IMG_6341.jpg"/>
+           <%=cl_image_tag location.photos.first.key, class: "image-show" %>
           <div class="card-trip-infos">
             <div>
             <h2><%= location.name %></h2>
               <p><%= location.location %></p>
             </div>
             <div class="avatar-bordered">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvcvtWZgxg2UOlbbr5NrHSjJsfsJtE319uLOc2aemIP_VdIWXbienu9uW5FN5ggOS96tc&usqp=CAU" class="avatar-bordered" />
+              <%= cl_image_tag current_user.photo.key, class: "avatar-bordered"%>
             </div>
           </div>
         </div>
