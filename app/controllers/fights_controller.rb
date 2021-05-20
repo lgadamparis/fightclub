@@ -14,6 +14,7 @@ class FightsController < ApplicationController
     @fight.location = @location
     if @fight.save
       redirect_to locations_path
+
     else
       render "locations/show"
     end
