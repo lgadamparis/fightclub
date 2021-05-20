@@ -1,7 +1,7 @@
 <div class="banner-main-container">
   <h2>Your fight informations</h2>
   <div class="card-trip">
-    <%=cl_image_tag @location.photos.first.key, class: "image-show" %>
+    <%= cl_image_tag @location.photos.first.key, class: "image-show" %>
     <div class="card-trip-infos">
       <div>
         <h2>Nom</h2>
@@ -21,7 +21,6 @@
           <%= f.submit "Let's fight", class: "btn btn-danger", data: { confirm: "Are you sure you want to fight lil dickhead ?"} %>
         <% end %>
         <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
-
       </div>
 
       <% if current_user.photo.attached? %>
