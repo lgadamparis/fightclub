@@ -1,4 +1,4 @@
-<div class="banner main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292532/yael-gonzalez-vdbOJuueLpU-unsplash_uxv8a4.jpg')">
+<div class="banner main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('')">
     <div class="col-12 col-sm-6">
       <h2>Your fight informations</h2>
       <hr>
@@ -12,8 +12,6 @@
         <% if @location.photos.attached?%>
         <h6><%=cl_image_tag @location.photos.first.key, class: "image-show" %></h6>
         <%end %>
-
-
       </div>
     </div>
   </div>
