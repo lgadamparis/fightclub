@@ -122,7 +122,8 @@
   text-decoration: none;
 }
 
-.search-animation{
+#search-form {
+  .search-animation{
     position: relative;
     top: 50%;
     left: 50%;
@@ -183,4 +184,5 @@ input{
 
 .image-show {
   border-radius: 5px;
+}
 }
