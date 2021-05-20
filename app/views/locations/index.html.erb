@@ -45,7 +45,9 @@
               <p><%= location.location %></p>
             </div>
             <div class="avatar-bordered">
-              <%= cl_image_tag current_user.photo.key, class: "avatar-bordered"%>
+              <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar-bordered"%>
+              <% end %>
             </div>
           </div>
         </div>
