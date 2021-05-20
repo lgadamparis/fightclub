@@ -9,13 +9,17 @@ class FightsController < ApplicationController
     @location = Location.find(params[:location_id].to_i)
     @fight.location = @location
     @fight.user = current_user
-    authorize @fight
-    @fight.location = @location
-    if @fight.save
+    my_fight = false
+    begin
+      authorize @fight
+    rescue Pundit::NotAuthorizedError
+      flash[:alert] = 'You cannot punch yourself bastard'
+      my_fight = true
+    end
+    if !my_fight && @fight.save
       redirect_to locations_path
-
     else
-      render "locations/show"
+      redirect_to location_path(@location)
     end
   end
 
