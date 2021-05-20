@@ -5,7 +5,7 @@
       <h1><strong>FIGHT CLUB</strong></h1>
       <p>Challenge your fighting spirit</p>
       <% if user_signed_in? %>
-          <%= link_to 'Become a fighter', locations_path, class: 'btn btn-ghost' %>
+          <%= link_to 'Go find a fight', locations_path, class: 'btn btn-ghost' %>
         <% else %>
           <%= link_to 'Become a fighter', new_user_registration_path, class: 'btn btn-ghost' %>
         <% end %>

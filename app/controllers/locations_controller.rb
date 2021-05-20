@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @fight = Fight.new
   end
 
   def new
