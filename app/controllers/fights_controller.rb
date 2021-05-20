@@ -7,19 +7,22 @@ class FightsController < ApplicationController
 
   def create
     @fight = Fight.new(fight_params)
-    @location = Location.find(params[:location_id])
+    @location = Location.find(params[:location_id].to_i)
+    @fight.location = @location
+    @fight.user = current_user
+    authorize @fight
     @fight.location = @location
     if @fight.save
-      redirect_to location_path(@location)
+      redirect_to locations_path
     else
-      render :new
+      render "locations/show"
     end
   end
 
   private
 
   def fight_params
-    params.require(:fight).permit(:booked, :result, :date, :time)
+    params.require(:fight).permit(:booked, :result, :fight_date)
   end
 end
 
