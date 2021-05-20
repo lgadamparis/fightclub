@@ -1,5 +1,4 @@
 class FightsController < ApplicationController
-
   def new
     @location = Location.find(params[:location_id])
     @fight = Fight.new
@@ -22,4 +21,3 @@ class FightsController < ApplicationController
     params.require(:fight).permit(:booked, :result, :date, :time)
   end
 end
-
