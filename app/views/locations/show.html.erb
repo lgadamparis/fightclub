@@ -1,30 +1,34 @@
-<h2>Your fight informations</h2>
-<div class="card-trip">
-  <%=cl_image_tag @location.photos.first.key, class: "image-show" %>
-  <div class="card-trip-infos">
-    <div>
-      <h2>Nom</h2>
-      <h2><h6><%= @location.name %></h6></h2>
-      <h2>Lieu</h2>
-      <p><h6><%= @location.location %></h6></p>
+<div class="banner-main-container">
+  <h2>Your fight informations</h2>
+  <div class="card-trip">
+    <%=cl_image_tag @location.photos.first.key, class: "image-show" %>
+    <div class="card-trip-infos">
+      <div>
+        <h2>Nom</h2>
+        <h2><h6><%= @location.name %></h6></h2>
+        <h2>Lieu</h2>
+        <p><h6><%= @location.location %></h6></p>
 
-      <p><h6><%= @location.starts_at %></h6></p>
-      <h2>Your fighter informations</h2>
-      <h2>pseudo</h2>
-      <p><h6><%= current_user.pseudo %></h6></p>
-      <h2>pseudo</h2>
-      <p><h6><%= current_user.bio %></h6></p>
-      <h2>Quand je peux casser des bouches ?</h2>
-      <%= simple_form_for [@location, @fight] do |f| %>
-        <%= f.input :fight_date, input_html: {  id: "range_start" }%>
-        <%= f.submit "Let's fight", class: "btn btn-danger", data: { confirm: "Are you sure you want to fight lil dickhead ?"} %>
+        <p><h6><%= @location.starts_at %></h6></p>
+        <h2>Your fighter informations</h2>
+        <h2>pseudo</h2>
+        <p><h6><%= current_user.pseudo %></h6></p>
+        <h2>pseudo</h2>
+        <p><h6><%= current_user.bio %></h6></p>
+        <h2>Quand je peux casser des bouches ?</h2>
+        <%= simple_form_for [@location, @fight] do |f| %>
+          <%= f.input :fight_date, input_html: {  id: "range_start" }%>
+          <%= f.submit "Let's fight", class: "btn btn-danger", data: { confirm: "Are you sure you want to fight lil dickhead ?"} %>
+        <% end %>
+        <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
+
+      </div>
+
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-large ml-4", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
-      <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
 
     </div>
-
-    <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered" %>
-
   </div>
 </div>
 
