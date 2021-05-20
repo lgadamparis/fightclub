@@ -42,4 +42,8 @@ import { showFight } from '../plugins/show_fight';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   showFight();
+
+  document.querySelector(".fa-search").addEventListener("click",() => {
+    document.querySelector('#submit-search').click()
+  })
 })
