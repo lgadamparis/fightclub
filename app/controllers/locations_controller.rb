@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
         lng: location.longitude,
          infoWindow: render_to_string(partial: "info_window", locals: { location: location }),
          id: location.id,
-         image_url: helpers.image_path('boxingglove.jpeg')
+         image_url: helpers.image_path('FightClubLogo.png')
       }
     end
   end
