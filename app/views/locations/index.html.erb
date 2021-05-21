@@ -5,7 +5,6 @@
 
   <div class="first-things">
     <h1>Find your <strong>fight</strong>, you crazy fuck</h1>
-    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight mb-15" %>
 
   </div>
       <div class="search-form-control form-group" id="search-form">
@@ -14,6 +13,7 @@
           <i class="fa fa-search mb-4"></i>
           <%= submit_tag 'submit', class: 'd-none', id: 'submit-search' %>
         </form>
+    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight" %>
       </div>
 
   <div class="row mt 24">
