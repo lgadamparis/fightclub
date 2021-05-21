@@ -13,6 +13,8 @@
             <div>
             <h2><%= fight.location.name  %></h2>
               <p><%= fight.location.location %></p>
+              <td><%= link_to 'Show', fight %></td>
+              <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </div>
             <div class="avatar-bordered">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvcvtWZgxg2UOlbbr5NrHSjJsfsJtE319uLOc2aemIP_VdIWXbienu9uW5FN5ggOS96tc&usqp=CAU" class="avatar-bordered" />

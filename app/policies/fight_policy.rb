@@ -7,4 +7,8 @@ class FightPolicy < ApplicationPolicy
   def create?
     record.location.user != user
   end
+
+  def destroy?
+    record.user == user
+  end
 end

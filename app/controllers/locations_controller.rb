@@ -47,9 +47,9 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    @restaurant.destroy
+    @locations.destroy
     respond_to do |format|
-      format.html { redirect_to restaurants_url, notice: "Restaurant was successfully destroyed." }
+      format.html { redirect_to locationss_url, notice: "locations was successfully destroyed." }
       format.json { head :no_content }
     end
   end

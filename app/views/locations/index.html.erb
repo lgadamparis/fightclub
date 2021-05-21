@@ -36,10 +36,16 @@
             <div>
             <h2><%= location.name %></h2>
               <p><%= location.location %></p>
+              <br>
+              <% if Fight.where(location: location, user: current_user).empty? %>
+                <div class="d-flex aligm-items-center justify-content-center"><p> "Don't be a pussy... Let's fight"</p> <span class="ml-2">🐈</span></div>
+              <% else %>
+                <div class="d-flex aligm-items-center justify-content-center"><p> "You booked it lil bitch"</p> <span class="ml-2">💯</span></div>
+              <% end %>
             </div>
             <div class="avatar-bordered">
-              <% if current_user.photo.attached? %>
-                <%= cl_image_tag current_user.photo.key, class: "avatar-bordered"%>
+              <% if location.user.photo.attached? %>
+                <%= cl_image_tag location.user.photo.key, class: "avatar-bordered"%>
               <% end %>
             </div>
           </div>
