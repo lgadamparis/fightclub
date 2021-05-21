@@ -40,10 +40,20 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { showFight } from '../plugins/show_fight';
 
 document.addEventListener('turbolinks:load', () => {
+  window.addEventListener('scroll', (e) => {
+    if (window.scrollY > 0) {
+      document.querySelector('.navbar-lewagon').classList.add('black-scroll');
+    } else if (window.scrollY === 0) {
+      document.querySelector('.navbar-lewagon').classList.remove('black-scroll');
+    }
+  })
   initMapbox();
   showFight();
 
   document.querySelector(".fa-search").addEventListener("click",() => {
     document.querySelector('#submit-search').click()
   })
+
+
 })
+
