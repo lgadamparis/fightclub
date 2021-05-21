@@ -1,14 +1,16 @@
 <div class="banner-main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292532/yael-gonzalez-vdbOJuueLpU-unsplash_uxv8a4.jpg')">
 
   <div class="first-things">
-    <h1>This is <strong>your fight</strong>, fucking cunt</h1>
+    <h1>This is <strong>your next fight</strong>, fucking cunt</h1>
   </div>
 
 
 <div class="cards-trips">
       <% @myfights.each do |fight|%>
         <div class="card-trip">
-          <img src="https://areabox.fr/documents-images/IMG_6341.jpg"/>
+          <% if fight.location.photos.attached? %>
+                    <%= cl_image_tag fight.location.photos.first.key, class: "image-show" %>
+                 <% end %>
           <div class="card-trip-infos">
             <div>
             <h2><%= fight.location.name  %></h2>
@@ -17,10 +19,16 @@
               <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </div>
             <div class="avatar-bordered">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvcvtWZgxg2UOlbbr5NrHSjJsfsJtE319uLOc2aemIP_VdIWXbienu9uW5FN5ggOS96tc&usqp=CAU" class="avatar-bordered" />
+              <% if fight.user.photo.attached? %>
+                <%= cl_image_tag fight.user.photo.key, class: "avatar-bordered"%>
+              <% end %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
+
+  <div class="first-things">
+    <h1>This is <strong>your fight</strong>, fucking cunt</h1>
+  </div>
       <%=link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
