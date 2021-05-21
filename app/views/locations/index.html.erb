@@ -29,7 +29,9 @@
       <% @locations.each do |location| %>
         <%= link_to location_path(location) do %>
               <div class="card-trip col-lg-6">
-          <%=cl_image_tag location.photos.first.key, class: "image-show" %>
+                 <% if location.photos.attached? %>
+                    <%= cl_image_tag location.photos.first.key, class: "image-show" %>
+                 <% end %>
           <div class="card-trip-infos">
             <div>
             <h2><%= location.name %></h2>
