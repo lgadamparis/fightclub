@@ -14,6 +14,9 @@ import "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
 import { showFight } from '../plugins/show_fight';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+
 
 document.addEventListener('turbolinks:load', () => {
   window.addEventListener('scroll', (e) => {
@@ -26,6 +29,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   showFight();
   initFlatpickr();
+  initAutocomplete();
 
 
   if (document.querySelector(".fa-search")) {
