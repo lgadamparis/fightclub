@@ -2,7 +2,7 @@
   justify-content: space-between;
   background-color: transparent;
   position: fixed;
-  height: 88px;
+  height: 77px;
   width: 100%;
   z-index: 999999;
 }
@@ -13,7 +13,7 @@
 
 .navbar-lewagon .navbar-brand img {
   margin-top: 4px;
-  width: 88px;
+  width: 50px;
 }
 
 .nav-link{
@@ -22,6 +22,7 @@
 
 .black-scroll{
   background-color: black;
+  opacity: 70%;
 }
 
 .navbar-brand{

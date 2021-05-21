@@ -5,16 +5,18 @@
 
   <div class="first-things">
     <h1>Find your <strong>fight</strong>, you crazy fuck</h1>
-
   </div>
-      <div class="search-form-control form-group" id="search-form">
-        <form action="/locations" class="search-animation">
-          <input type="search" name="query">
-          <i class="fa fa-search mb-4"></i>
-          <%= submit_tag 'submit', class: 'd-none', id: 'submit-search' %>
-        </form>
+
+  <div class="container-forms d-flex">
     <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight" %>
-      </div>
+    <div class="search-form-control" id="search-form">
+      <form action="/locations" class="search-animation">
+        <input type="search" name="query">
+        <i class="fa fa-search"></i>
+        <%= submit_tag 'submit', class: 'd-none', id: 'submit-search' %>
+      </form>
+    </div>
+  </div>
 
   <div class="row mt 24">
 
@@ -38,7 +40,8 @@
               <p><%= location.location %></p>
               <br>
               <% if Fight.where(location: location, user: current_user).empty? %>
-                <div class="d-flex aligm-items-center justify-content-center"><p> "Don't be a pussy... Let's fight"</p> <span class="ml-2">🐈</span></div>
+                <div class="d-flex aligm-items-center justify-content-center">
+                </div>
               <% else %>
                 <div class="d-flex aligm-items-center justify-content-center"><p> "You booked it lil bitch"</p> <span class="ml-2">💯</span></div>
               <% end %>

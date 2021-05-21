@@ -1,6 +1,4 @@
-.form-group{
-  width: 100%;
-}
+
 .simple-form-locations{
   .search-form-control{
    display: flex;
@@ -123,10 +121,10 @@
 }
 
 #search-form {
+
+  top: 25px;
+
   .search-animation{
-    position: relative;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%,-50%);
     transition: all 1s;
     width: 50px;
@@ -139,25 +137,17 @@
 }
 
 input{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;;
-    height: 42.5px;
     line-height: 30px;
     outline: 0;
     border: 0;
     display: none;
     font-size: 1em;
     border-radius: 20px;
-    padding: 0 20px;
 }
 
 .fa{
     box-sizing: border-box;
     padding: 10px;
-    width: 42.5px;
-    height: 42.5px;
     position: absolute;
     top: 0;
     right: 0;
@@ -169,7 +159,7 @@ input{
 }
 
 .search-animation:hover{
-    width: 200px;
+    width: 400px;
     cursor: pointer;
 }
 
@@ -185,4 +175,12 @@ input{
 .image-show {
   border-radius: 5px;
 }
+}
+
+
+.container-forms {
+  width: 1000px;
+  margin-left: 50px;
+  align-items: center;
+  height: 100px;
 }

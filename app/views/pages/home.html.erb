@@ -3,7 +3,6 @@
   <div class="banner-container">
     <div class="banner-content">
       <h1><strong>FIGHT CLUB</strong></h1>
-      <p>Challenge your fighting spirit</p>
       <% if user_signed_in? %>
           <%= link_to 'Go find a fight', locations_path, class: 'btn btn-ghost' %>
         <% else %>
