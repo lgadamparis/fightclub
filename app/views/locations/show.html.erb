@@ -7,23 +7,21 @@
     <div class="card-trip-infos">
       <div class="w-100">
         <div class="d-flex justify-content-between">
-          <h2>Nom</h2>
-          <div class="avatar-bordered">
+        <div><h2>Fight name</h2>
+        <p><%= @location.name %></p>
+        <h2>Fight place</h2>
+        <p><%= @location.location %></p>
+        <p><%= @location.starts_at %></p>
+        <h2>Skills</h2>
+        <p><%= current_user.pseudo %></p></div>
             <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key, class: "avatar-bordered" %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar-border2" %>
             <% end %>
-          </div>
+
         </div>
-        <h2><h6><%= @location.name %></h6></h2>
-        <h2>Lieu</h2>
-        <p><h6><%= @location.location %></h6></p>
-        <p><h6><%= @location.starts_at %></h6></p>
-        <h2>Your fighter informations</h2>
-        <h2>pseudo</h2>
-        <p><h6><%= current_user.pseudo %></h6></p>
-        <h2>pseudo</h2>
-        <p><h6><%= current_user.bio %></h6></p>
-        <h2>Quand je peux casser des bouches ?</h2>
+
+        <h2>Bio</h2>
+        <p><%= current_user.bio %></p>
         <%= simple_form_for [@location, @fight] do |f| %>
           <%= f.input :fight_date, as: :date, html5: true, input_html: {  id: "range_start" } %>
           <div class="d-flex flex-row justify-content-between">
@@ -32,9 +30,6 @@
         <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
         </div>
       </div>
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar-large ml-4", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
     </div>
   </div>
 </div>
