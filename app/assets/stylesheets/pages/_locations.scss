@@ -51,6 +51,47 @@
   opacity: 0.9;
 }
 
+.card-recap {
+  margin-bottom: 12px;
+  padding: 8px;
+  overflow: hidden;
+  background: #245545;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  opacity: 0.9;
+}
+
+.card-recap:hover {
+  box-shadow: 0 0 3px 3px rgba(0, 140, 186, 0.5);
+}
+
+.card-recap > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-recap h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-recap p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-recap .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  color: white;
+}
+
 .card-trip:hover {
   box-shadow: 0 0 3px 3px rgba(0, 140, 186, 0.5);
 }
