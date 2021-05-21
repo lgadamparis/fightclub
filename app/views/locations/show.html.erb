@@ -1,8 +1,11 @@
 <div class="banner-main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292529/senad-palic-o6h-CuvAypE-unsplash_cz5hh1.jpg')">>
-  <h2 style="color:white;">Your fight information</h2>
-  <div class="card-recap px-5 mx-5">
-    <%= cl_image_tag @location.photos.first.key, class: "image-show" %>
-    <div class="card-trip-infos ">
+
+  <h2>Your fight informations</h2>
+  <div class="card-trip px-5 mx-5">
+    <% if @location.photos.attached? %>
+      <%= cl_image_tag @location.photos.first.key, class: "image-show" %>
+      <% end %>
+    <div class="card-trip-infos">
       <div>
         <h2>Nom</h2>
         <h2><h6><%= @location.name %></h6></h2>
