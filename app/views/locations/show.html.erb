@@ -23,7 +23,7 @@
         <h2>Bio</h2>
         <p><%= current_user.bio %></p>
         <%= simple_form_for [@location, @fight] do |f| %>
-          <%= f.input :fight_date, as: :date, html5: true, input_html: {  id: "range_start" } %>
+          <%= f.input :fight_date, input_html: {  id: "range_start" } %>
           <div class="d-flex flex-row justify-content-between">
           <%= f.submit "Let's fight", class: "btn btn-danger", data: { confirm: "Are you sure you want to fight lil dickhead ?"} %>
         <% end %>

@@ -6,8 +6,8 @@
           <%= simple_form_for @location do |f| %>
             <%= f.input :name, placeholder: "fight name" %>
             <%= f.input :location, placeholder: "location" %>
-            <%= f.input :starts_at, as: :string, input_html: { class: "range_start" } %>
-            <%= f.input :ends_at, as: :string, input_html: { class: "range_end d-none" } %>
+            <%= f.input :starts_at, input_html: { class: "range_start" } %>
+            <%= f.input :ends_at, input_html: { class: "range_end" } %>
             <%= f.input :photos, as: :file, input_html: { multiple: true }, placeholder: "download photos" %>
             <%= f.submit "Let's fight", class: "btn btn-danger" %>
             <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
