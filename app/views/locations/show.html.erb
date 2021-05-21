@@ -12,7 +12,7 @@
         <h2>Fight place</h2>
         <p><%= @location.location %></p>
         <p><%= @location.starts_at %></p>
-        <h2>Skills</h2>
+        <h2>Pseudo</h2>
         <p><%= current_user.pseudo %></p></div>
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, class: "avatar-border2" %>
