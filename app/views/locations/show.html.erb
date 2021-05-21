@@ -1,16 +1,22 @@
-<div class="banner-main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292529/senad-palic-o6h-CuvAypE-unsplash_cz5hh1.jpg')">>
-  <h2>Your fight informations</h2>
-  <div class="card-trip">
+<div class="banner-main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292532/yael-gonzalez-vdbOJuueLpU-unsplash_uxv8a4.jpg')">
+  <h2 class="text-white mt-5 ml-5">Your fight informations</h2>
+  <div class="card-trip p-5 mx-auto my-5 w-50">
     <% if @location.photos.attached? %>
       <%= cl_image_tag @location.photos.first.key, class: "image-show" %>
       <% end %>
     <div class="card-trip-infos">
-      <div>
-        <h2>Nom</h2>
+      <div class="w-100">
+        <div class="d-flex justify-content-between">
+          <h2>Nom</h2>
+          <div class="avatar-bordered">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar-bordered" %>
+            <% end %>
+          </div>
+        </div>
         <h2><h6><%= @location.name %></h6></h2>
         <h2>Lieu</h2>
         <p><h6><%= @location.location %></h6></p>
-
         <p><h6><%= @location.starts_at %></h6></p>
         <h2>Your fighter informations</h2>
         <h2>pseudo</h2>
@@ -19,16 +25,16 @@
         <p><h6><%= current_user.bio %></h6></p>
         <h2>Quand je peux casser des bouches ?</h2>
         <%= simple_form_for [@location, @fight] do |f| %>
-          <%= f.input :fight_date, input_html: {  id: "range_start" }%>
+          <%= f.input :fight_date, as: :date, html5: true, input_html: {  id: "range_start" } %>
+          <div class="d-flex flex-row justify-content-between">
           <%= f.submit "Let's fight", class: "btn btn-danger", data: { confirm: "Are you sure you want to fight lil dickhead ?"} %>
         <% end %>
         <%= link_to 'back to locations', locations_path, class: 'btn btn-danger' %>
+        </div>
       </div>
-
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar-large ml-4", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
-
     </div>
   </div>
 </div>
