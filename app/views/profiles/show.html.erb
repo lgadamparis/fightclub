@@ -15,7 +15,7 @@
             <div>
             <h2><%= fight.location.name  %></h2>
               <p><%= fight.location.location %></p>
-              <td><%= link_to 'Show', fight %></td>
+              <td><%= link_to 'Show', location_path(fight) %></td>
               <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </div>
             <div class="avatar-bordered">
