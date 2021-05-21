@@ -8,34 +8,10 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-
-
-// ----------------------------------------------------
-// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
-// WRITE YOUR OWN JS STARTING FROM HERE 👇
-// ----------------------------------------------------
-
 // External imports
 import "bootstrap";
+
 import { initFlatpickr } from "../plugins/flatpickr";
-
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  initFlatpickr();
-  // initSelect2();
-});
-
 import { initMapbox } from '../plugins/init_mapbox';
 import { showFight } from '../plugins/show_fight';
 
@@ -49,11 +25,13 @@ document.addEventListener('turbolinks:load', () => {
   })
   initMapbox();
   showFight();
-
-  document.querySelector(".fa-search").addEventListener("click",() => {
-    document.querySelector('#submit-search').click()
-  })
+  initFlatpickr();
 
 
+  if (document.querySelector(".fa-search")) {
+    document.querySelector(".fa-search").addEventListener("click",() => {
+      document.querySelector('#submit-search').click()
+    })
+  }
 })
 

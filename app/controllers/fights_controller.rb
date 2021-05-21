@@ -1,4 +1,5 @@
 class FightsController < ApplicationController
+
   def new
     @location = Location.find(params[:location_id])
     @fight = Fight.new
@@ -23,6 +24,16 @@ class FightsController < ApplicationController
     end
   end
 
+
+  def destroy
+    @fight = Fight.find(params[:id])
+    authorize(@fight)
+      @fight.destroy
+      respond_to do |format|
+        format.html { redirect_to profile_path, notice: 'fight was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    end
   private
 
   def fight_params

@@ -52,7 +52,8 @@
 }
 
 .card-trip:hover {
-  box-shadow: 0 0 3px 3px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 6px 6px rgb(53, 127, 102);
+  transition: 0.2s;
 }
 
 .card-trip > img {
@@ -108,25 +109,11 @@
   font-weight: bold;
 }
 
-
-.first-things .btn-to-fight.mb-15 {
-  margin-left: 42px;
-  margin-bottom: 24px;
-  color: #F4F4F4;
-  border: 10px solid #F4F4F4;
-  padding: 24px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 3s ease;
-  text-decoration: none;
-}
-
 #search-form {
   .search-animation{
     position: relative;
-    top: 50%;
-    left: 50%;
+    top: 50px;
+    left: 190px;
     transform: translate(-50%,-50%);
     transition: all 1s;
     width: 50px;
@@ -169,7 +156,7 @@ input{
 }
 
 .search-animation:hover{
-    width: 200px;
+    width: 300px;
     cursor: pointer;
 }
 

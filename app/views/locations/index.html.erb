@@ -5,7 +5,6 @@
 
   <div class="first-things">
     <h1>Find your <strong>fight</strong>, you crazy fuck</h1>
-    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight mb-15" %>
 
   </div>
       <div class="search-form-control form-group" id="search-form">
@@ -14,6 +13,7 @@
           <i class="fa fa-search mb-4"></i>
           <%= submit_tag 'submit', class: 'd-none', id: 'submit-search' %>
         </form>
+    <%= link_to "Create your own location", "/locations/new", class: "btn-to-fight" %>
       </div>
 
   <div class="row mt 24">
@@ -29,15 +29,23 @@
       <% @locations.each do |location| %>
         <%= link_to location_path(location) do %>
               <div class="card-trip col-lg-6">
-          <%=cl_image_tag location.photos.first.key, class: "image-show" %>
+                 <% if location.photos.attached? %>
+                    <%= cl_image_tag location.photos.first.key, class: "image-show" %>
+                 <% end %>
           <div class="card-trip-infos">
             <div>
             <h2><%= location.name %></h2>
               <p><%= location.location %></p>
+              <br>
+              <% if Fight.where(location: location, user: current_user).empty? %>
+                <div class="d-flex aligm-items-center justify-content-center"><p> "Don't be a pussy... Let's fight"</p> <span class="ml-2">🐈</span></div>
+              <% else %>
+                <div class="d-flex aligm-items-center justify-content-center"><p> "You booked it lil bitch"</p> <span class="ml-2">💯</span></div>
+              <% end %>
             </div>
             <div class="avatar-bordered">
-              <% if current_user.photo.attached? %>
-                <%= cl_image_tag current_user.photo.key, class: "avatar-bordered"%>
+              <% if location.user.photo.attached? %>
+                <%= cl_image_tag location.user.photo.key, class: "avatar-bordered"%>
               <% end %>
             </div>
           </div>

@@ -1,7 +1,9 @@
 <div class="banner-main-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/louisgadam/image/upload/v1621292529/senad-palic-o6h-CuvAypE-unsplash_cz5hh1.jpg')">>
   <h2>Your fight informations</h2>
   <div class="card-trip">
-    <%= cl_image_tag @location.photos.first.key, class: "image-show" %>
+    <% if @location.photos.attached? %>
+      <%= cl_image_tag @location.photos.first.key, class: "image-show" %>
+      <% end %>
     <div class="card-trip-infos">
       <div>
         <h2>Nom</h2>

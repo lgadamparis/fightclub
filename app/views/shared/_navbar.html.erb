@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-lewagon">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/locations/">
   <%= image_tag "FightClubLogo.png"%>
   </a>
 
@@ -12,7 +12,12 @@
     <ul class="navbar-nav mr-auto align-items-center">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.photo.key, class: "avatar-large ml-4", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar-large ml-4", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
             <%= link_to "Your fighter profile", profile_path, class: "dropdown-item" %>
